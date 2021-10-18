@@ -1,6 +1,6 @@
 - 👋 Hi, I’m @lauraonetwo
 - 👀 I’m interested in animation, photography, cinematography, etc.
-- 🌱 I’m currently learning 2nd Baccalaureate
+- 🌱 I’m currently learning Videogames Development
 - 📫 How to reach me: IG @lauraonetwo
 
 <!---
