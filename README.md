@@ -21,9 +21,9 @@
 
 - 🌱 I’m currently learning Videogames Development in <b>Complutense University of Madrid</b>
 - 📫 How to reach me: **lauraonetwo443@gmail.com**
-
+- 🗂️ Visit my portfolio: **https://lauraonetwo.github.io/lauraonetwo/**
 ---
-<p align="center" style="font-family: Arial;"><b>LANGUAGES</b></p>
+<p align="center" style="font-family: Arial;"><b>🌐 LANGUAGES 🌐</b></p>
 
 <div align="left">
     <img src="https://github.com/devicons/devicon/blob/master/icons/html5/html5-original.svg" title="HTML5" alt="HTML" width="400" height="40"/>&nbsp;
@@ -35,7 +35,7 @@
 </div>
 
 ---
-<p align="center" style="font-family: Arial;"><b>TOOLS</b></p>
+<p align="center" style="font-family: Arial;"><b>🛠️ TOOLS 🛠️</b></p>
 
 <div align="left">
     <img src="https://github.com/devicons/devicon/blob/master/icons/blender/blender-original.svg" title="Blender" alt="Blender" width="400" height="40"/>&nbsp;
