@@ -45,7 +45,7 @@
     <img src="https://github.com/devicons/devicon/blob/master/icons/aftereffects/aftereffects-original.svg" title="AfterEffects" alt="AffterEffects" width="400" height="40"/>&nbsp;
     <img src="https://github.com/devicons/devicon/blob/master/icons/premierepro/premierepro-original.svg" title="PremierePro" alt="PremierePro" width="400" height="40"/>&nbsp;
     <img src="https://github.com/devicons/devicon/blob/master/icons/git/git-original.svg" title="Git" alt="Git" width="400" height="40"/>&nbsp;
-    <img src="https://github.com/devicons/devicon/tree/master/icons/github" title="GitHub" alt="GitHub" width="400" height="40"/>&nbsp;
+    <img src="https://github.com/devicons/devicon/blob/master/icons/github/github-original.svg" title="GitHub" alt="GitHub" width="400" height="40"/>&nbsp;
     <img src="https://github.com/devicons/devicon/blob/master/icons/sdl/sdl-original.svg" title="SDL" alt="SDL" width="400" height="40"/>&nbsp;
     <img src="https://github.com/devicons/devicon/blob/master/icons/unity/unity-original.svg" title="Unity" alt="Unity" width="400" height="40"/>&nbsp;
     <img src="https://github.com/devicons/devicon/blob/master/icons/visualstudio/visualstudio-plain.svg" title="Visual Studio" alt="Visual Studio" width="400" height="40"/>&nbsp;
