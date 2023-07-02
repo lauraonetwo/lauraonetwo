@@ -17,7 +17,7 @@
 </div>
 
 ---
-<p align="center" style="font-family: Arial;"><b>ABOUT ME</b></p>
+<p align="center" style="font-family: Arial;"><b>🙋🏻‍♀️ ABOUT ME 🙋🏻‍♀️</b></p>
 
 - 🌱 I’m currently learning Videogames Development in <b>Complutense University of Madrid</b>
 - 📫 How to reach me: **lauraonetwo443@gmail.com**
@@ -51,7 +51,7 @@
 </div>
 
 ---
-<p align="center" style="font-family: Arial;"><b>MY STATS</b></p>
+<p align="center" style="font-family: Arial;"><b>📊 MY STATS 📊</b></p>
 
 <div align="center">
 
