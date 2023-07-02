@@ -53,8 +53,12 @@
 ---
 <p align="center" style="font-family: Arial;"><b>MY STATS</b></p>
 
+<div align="center">
+
 [![GitHub Streak](https://streak-stats.demolab.com?user=LauraWangQiu&theme=radical&border_radius=4)](https://github.com/LauraWangQiu)
 
 [![Anurag's GitHub stats](https://github-readme-stats.vercel.app/api?username=LauraWangQiu&show_icons=true&theme=radical)](https://github.com/LauraWangQiu)
 
 [![Top Langs](https://github-readme-stats.vercel.app/api/top-langs/?username=lauraonetwo&theme=radical)](https://github.com/lauraonetwo)
+
+</div>
