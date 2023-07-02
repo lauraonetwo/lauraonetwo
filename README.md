@@ -23,7 +23,7 @@
 - 📫 How to reach me: **lauraonetwo443@gmail.com**
 
 ---
-<p style="text-align: center; font-family: Arial;"><b>LANGUAGES AND TOOLS</b></p>
+<p style="text-align: center; font-family: Arial;"><b>LANGUAGES</b></p>
 
 <div align="left">
     <img src="https://github.com/devicons/devicon/blob/master/icons/html5/html5-original.svg" title="HTML5" alt="HTML" width="400" height="40"/>&nbsp;
@@ -32,6 +32,13 @@
     <img src="https://github.com/devicons/devicon/blob/master/icons/csharp/csharp-original.svg" title="C#" alt="C#" width="400" height="40"/>&nbsp;
     <img src="https://github.com/devicons/devicon/blob/master/icons/cplusplus/cplusplus-original.svg" title="C++" alt="C++" width="400" height="40"/>&nbsp;
     <img src="https://github.com/devicons/devicon/blob/master/icons/python/python-original.svg" title="Python" alt="Python" width="400" height="40"/>&nbsp;
+</div>
+
+---
+
+<p style="text-align: center; font-family: Arial;"><b>TOOLS</b></p>
+
+<div align="left">
     <img src="https://github.com/devicons/devicon/blob/master/icons/blender/blender-original.svg" title="Blender" alt="Blender" width="400" height="40"/>&nbsp;
     <img src="https://github.com/devicons/devicon/blob/master/icons/canva/canva-original.svg" title="Canva" alt="Canva" width="400" height="40"/>&nbsp;
     <img src="https://github.com/devicons/devicon/blob/master/icons/photoshop/photoshop-plain.svg" title="PhotoShop" alt="PhotoShop" width="400" height="40"/>&nbsp;
@@ -44,7 +51,6 @@
     <img src="https://github.com/devicons/devicon/blob/master/icons/visualstudio/visualstudio-plain.svg" title="Visual Studio" alt="Visual Studio" width="400" height="40"/>&nbsp;
     <img src="https://github.com/devicons/devicon/blob/master/icons/vscode/vscode-original.svg" title="VS Code" alt="VS Code" width="400" height="40"/>&nbsp;
 </div>
-
 ---
 <p style="text-align: center; font-family: Arial;"><b>MY STATS</b></p>
 
