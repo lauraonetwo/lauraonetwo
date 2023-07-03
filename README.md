@@ -10,8 +10,8 @@
         <a href="https://www.youtube.com/channel/UCJPKLdfgL67m9pIMbxB_DaA" target="_blank">
         <img src="https://img.shields.io/youtube/channel/subscribers/UCJPKLdfgL67m9pIMbxB_DaA?label=LauraOnetwo&logo=youtube&style=for-the-badge" alt="YouTube Badge"/> 
         </a>
-        <a href="https://twitter.com/LauraWangQiu" target="_blank">
-        <img src="https://img.shields.io/twitter/follow/LauraWangQiu?color=blue&label=LauraWangQiu&logo=twitter&style=for-the-badge" alt="Twitter Badge"/> 
+        <a href="https://twitter.com/lauraonetwo1" target="_blank">
+        <img src="https://img.shields.io/twitter/follow/lauraonetwo1?color=blue&label=lauraonetwo&logo=twitter&style=for-the-badge" alt="Twitter Badge"/> 
     </a>
     </div>
 </div>
