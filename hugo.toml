@@ -1,12 +1,25 @@
 baseURL = 'https://lauraonetwo.github.io/lauraonetwo'
 languageCode = 'es-es'
 title = 'Laura Wang Qiu'
-theme = 'PaperMod'
+theme = 'github-style'
 publishDir = 'docs'
 
-[menu]
-[[menu.main]]
-  name = 'GitHub'
-  pre = '<i class="fa fa-heart" aria-hidden="true"></i>'
-  url = 'https://github.com/lauraonetwo'
-  weight = 20
+[params]
+  author = "lauraonetwo"
+  description = "Description"
+  github = "lauraonetwo"
+  twitter = "LauraWangQiu"
+  linkedin = "yiwangqiu"
+  instagram = "lauraonetwo"
+  email = "lauraonetwo443@gmail.com"
+  url = "https://github.com/lauraonetwo"
+  keywords = "Videogame Developer"
+  rss = true
+  lastmod = true
+  userStatusEmoji = "😊"
+  favicon = "/images/github.png"
+  location = "Spain"
+  enableGitalk = false
+
+[frontmatter]
+  lastmod = ["lastmod", ":fileModTime", ":default"]
