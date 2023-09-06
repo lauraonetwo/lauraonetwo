@@ -2,6 +2,7 @@ baseURL = 'https://lauraonetwo.github.io/lauraonetwo'
 languageCode = 'es-es'
 title = 'Laura Wang Qiu'
 theme = 'PaperMod'
+publishDir = 'docs'
 
 [menu]
 [[menu.main]]
