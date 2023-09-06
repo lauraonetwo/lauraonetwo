@@ -2,26 +2,26 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/">
   <channel>
     <title>Laura Wang Qiu</title>
-    <link>/</link>
+    <link>https://lauraonetwo.github.io/lauraonetwo/</link>
     <description>Recent content on Laura Wang Qiu</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>es-es</language>
-    <lastBuildDate>Fri, 25 Aug 2023 16:00:00 +0200</lastBuildDate><atom:link href="/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Fri, 25 Aug 2023 16:00:00 +0200</lastBuildDate><atom:link href="https://lauraonetwo.github.io/lauraonetwo/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>About</title>
-      <link>/about/</link>
+      <link>https://lauraonetwo.github.io/lauraonetwo/about/</link>
       <pubDate>Fri, 25 Aug 2023 16:24:53 +0200</pubDate>
       
-      <guid>/about/</guid>
+      <guid>https://lauraonetwo.github.io/lauraonetwo/about/</guid>
       <description></description>
     </item>
     
     <item>
       <title>🚧 Under maintenance 🚧</title>
-      <link>/posts/first-post/</link>
+      <link>https://lauraonetwo.github.io/lauraonetwo/posts/first-post/</link>
       <pubDate>Fri, 25 Aug 2023 16:00:00 +0200</pubDate>
       
-      <guid>/posts/first-post/</guid>
+      <guid>https://lauraonetwo.github.io/lauraonetwo/posts/first-post/</guid>
       <description>We are under maintenance, come later&amp;hellip;</description>
     </item>
     
