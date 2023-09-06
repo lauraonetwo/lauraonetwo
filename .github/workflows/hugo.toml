@@ -1,0 +1,11 @@
+baseURL = ''
+languageCode = 'es-es'
+title = 'Laura Wang Qiu'
+theme = 'PaperMod'
+
+[menu]
+[[menu.main]]
+  name = 'GitHub'
+  pre = '<i class="fa fa-heart" aria-hidden="true"></i>'
+  url = 'https://github.com/lauraonetwo'
+  weight = 20
