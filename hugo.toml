@@ -14,7 +14,6 @@ publishDir = 'docs'
   email = "lauraonetwo443@gmail.com"
   url = "https://github.com/lauraonetwo"
   keywords = "Videogame Developer"
-  rss = true
   lastmod = true
   userStatusEmoji = "😊"
   favicon = "/images/github.png"
