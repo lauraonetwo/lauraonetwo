@@ -59,6 +59,6 @@
 
 [![Anurag's GitHub stats](https://github-readme-stats.vercel.app/api?username=LauraWangQiu&show_icons=true&theme=radical)](https://github.com/LauraWangQiu)
 
-[![Top Langs](https://github-readme-stats.vercel.app/api/top-langs/?username=lauraonetwo&theme=radical)](https://github.com/lauraonetwo)
+[![Top Langs](https://github-readme-stats.vercel.app/api/top-langs/?username=LauraWangQiu&theme=radical)](https://github.com/LauraWangQiu)
 
 </div>
