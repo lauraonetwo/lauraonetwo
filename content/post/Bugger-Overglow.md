@@ -2,7 +2,6 @@
 title: "Bugger Overglow"
 date: 2023-10-08T02:51:50+02:00
 draft: false
-pin: true
 summary: "Introduction to Buffer Overflow in C"
 ---
 
