@@ -7,7 +7,7 @@ publishDir = 'docs'
 [params]
   author = "lauraonetwo"
   description = "Videogame Developer | Desarrolladora de Videojuegos"
-  github = "lauraonetwo · she/her"
+  github = "lauraonetwo"
   twitter = "LauraWangQiu"
   linkedin = "yiwangqiu"
   instagram = "lauraonetwo"
