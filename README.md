@@ -1,17 +1,14 @@
 <div id="header" align="center">
-    <img  width="250" src="https://media.giphy.com/media/LMcB8XospGZO8UQq87/giphy.gif">
+    <a href="https://git.io/typing-svg"><img src="https://readme-typing-svg.demolab.com?font=Fira+Code&size=36&pause=1000&background=381739&center=true&vCenter=true&random=false&width=600&lines=Hello+World!" alt="Typing SVG" /></a>
     <h1> 👋 Hi, I’m Laura Wang Qiu</h4>
     <div>
         <h3>🎮⌨️🎨🎥📷</h3>
         <h4>I'm interested in Programming, Videogame Design, Graphic Design, Animation, Photography, UI Design ...</h4>
-        <a href="https://www.twitch.tv/yaylowg" target="_blank">
-        <img src="https://img.shields.io/twitch/status/yaylowg?color=purple&logo=twitch&style=for-the-badge" alt="Twitch Badge"/>
-        </a>
         <a href="https://www.youtube.com/channel/UCJPKLdfgL67m9pIMbxB_DaA" target="_blank">
         <img src="https://img.shields.io/youtube/channel/subscribers/UCJPKLdfgL67m9pIMbxB_DaA?label=LauraOnetwo&logo=youtube&style=for-the-badge" alt="YouTube Badge"/> 
         </a>
-        <a href="https://twitter.com/lauraonetwo1" target="_blank">
-        <img src="https://img.shields.io/twitter/follow/lauraonetwo1?color=blue&label=lauraonetwo&logo=twitter&style=for-the-badge" alt="Twitter Badge"/> 
+        <a href="https://twitter.com/LauraWangQiu" target="_blank">
+        <img src="https://img.shields.io/twitter/follow/LauraWangQiu?color=blue&label=LauraWangQiu&logo=twitter&style=for-the-badge" alt="Twitter Badge"/> 
     </a>
     </div>
 </div>
@@ -21,7 +18,7 @@
 
 - 🌱 I’m currently learning Videogames Development in <b>Complutense University of Madrid</b>
 - 📫 How to reach me: **lauraonetwo443@gmail.com**
-- 🗂️ Visit my portfolio: **https://lauraonetwo.github.io/lauraonetwo/**
+- 🗂️ Visit my portfolio: **🚧In Maintenance🚧**
 ---
 <p align="center" style="font-family: Arial;"><b>🌐 LANGUAGES 🌐</b></p>
 
