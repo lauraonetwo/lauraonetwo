@@ -3,7 +3,7 @@
     <h1> 👋 Hi, I’m Laura Wang Qiu</h4>
     <div>
         <h3>🎮⌨️🎨🎥📷</h3>
-        <h4>I'm interested in Programming, Videogame Design, Graphic Design, Animation, Photography, UI Design ...</h4>
+        <h4>I'm interested in Programming, GameDev, UI/UX Design and Cybersecurity ...</h4>
         <a href="https://www.youtube.com/channel/UCJPKLdfgL67m9pIMbxB_DaA" target="_blank">
         <img src="https://img.shields.io/youtube/channel/subscribers/UCJPKLdfgL67m9pIMbxB_DaA?label=LauraOnetwo&logo=youtube&style=for-the-badge" alt="YouTube Badge"/> 
         </a>
@@ -18,7 +18,7 @@
 
 - 🌱 I’m currently learning Videogames Development in <b>Complutense University of Madrid</b>
 - 📫 How to reach me: **lauraonetwo443@gmail.com**
-- 🗂️ Visit my portfolio: **🚧In Maintenance🚧**
+- 🗂️ Visit my portfolio: **https://lauraonetwo.com**
 ---
 <p align="center" style="font-family: Arial;"><b>🌐 LANGUAGES 🌐</b></p>
 

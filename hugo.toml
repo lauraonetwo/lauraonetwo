@@ -6,7 +6,7 @@ publishDir = 'docs'
 
 [params]
   author = "lauraonetwo"
-  description = "Videogame Developer | Desarrolladora de Videojuegos"
+  description = "Software Developer C++ | Videogame Developer"
   github = "lauraonetwo"
   twitter = "LauraWangQiu"
   linkedin = "yiwangqiu"
@@ -15,7 +15,7 @@ publishDir = 'docs'
   url = "https://github.com/lauraonetwo"
   keywords = "Videogame Developer"
   lastmod = true
-  userStatusEmoji = "😊"
+  userStatusEmoji = "💭"
   favicon = "/images/github.png"
   location = "Madrid"
   enableGitalk = false
