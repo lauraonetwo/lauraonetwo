@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Posts on Laura Wang Qiu</title>
+    <link>https://lauraonetwo.github.io/lauraonetwo/posts/</link>
+    <description>Recent content in Posts on Laura Wang Qiu</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>es-es</language>
+    <lastBuildDate>Wed, 06 Sep 2023 21:24:46 +0200</lastBuildDate><atom:link href="https://lauraonetwo.github.io/lauraonetwo/posts/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>First Post</title>
+      <link>https://lauraonetwo.github.io/lauraonetwo/posts/first-post/</link>
+      <pubDate>Wed, 06 Sep 2023 21:24:46 +0200</pubDate>
+      
+      <guid>https://lauraonetwo.github.io/lauraonetwo/posts/first-post/</guid>
+      <description>This is my first post</description>
+    </item>
+    
+  </channel>
+</rss>

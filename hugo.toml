@@ -1,0 +1,24 @@
+baseURL = 'https://lauraonetwo.github.io/lauraonetwo'
+languageCode = 'es-es'
+title = 'Laura Wang Qiu'
+theme = 'github-style'
+publishDir = 'docs'
+
+[params]
+  author = "lauraonetwo"
+  description = "Videogame Developer | Desarrolladora de Videojuegos"
+  github = "lauraonetwo"
+  twitter = "LauraWangQiu"
+  linkedin = "yiwangqiu"
+  instagram = "lauraonetwo"
+  email = "lauraonetwo443@gmail.com"
+  url = "https://github.com/lauraonetwo"
+  keywords = "Videogame Developer"
+  lastmod = true
+  userStatusEmoji = "😊"
+  favicon = "/images/github.png"
+  location = "Madrid"
+  enableGitalk = false
+
+[frontmatter]
+  lastmod = ["lastmod", ":fileModTime", ":default"]

