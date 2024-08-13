@@ -1,0 +1,14 @@
+enable : true
+heading : "MAKE IT HAPPEN!"
+counter_item: 
+  - title: "Years of Experience"
+    number: "3"
+
+  - title: "Projects Completed"
+    number: "10"
+
+  - title: "Hours slept"
+    number: "6"
+
+  - title: "Hours wasted"
+    number: "65535"

@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
+  xmlns:xhtml="http://www.w3.org/1999/xhtml">
+  <url>
+    <loc>http://lauraonetwo.github.io/</loc>
+    <lastmod>2024-08-14T00:42:28+02:00</lastmod>
+  </url><url>
+    <loc>http://lauraonetwo.github.io/portfolio/</loc>
+    <lastmod>2024-08-14T00:42:28+02:00</lastmod>
+  </url><url>
+    <loc>http://lauraonetwo.github.io/contact/</loc>
+    <lastmod>2024-08-14T00:26:01+02:00</lastmod>
+  </url><url>
+    <loc>http://lauraonetwo.github.io/blog/</loc>
+    <lastmod>2024-08-14T00:17:01+02:00</lastmod>
+  </url><url>
+    <loc>http://lauraonetwo.github.io/about/</loc>
+    <lastmod>2024-08-14T00:15:00+02:00</lastmod>
+  </url><url>
+    <loc>http://lauraonetwo.github.io/portfolio/project1/</loc>
+    <lastmod>2024-08-14T00:44:46+06:00</lastmod>
+  </url><url>
+    <loc>http://lauraonetwo.github.io/portfolio/project2/</loc>
+    <lastmod>2024-08-14T00:44:46+06:00</lastmod>
+  </url><url>
+    <loc>http://lauraonetwo.github.io/blog/first-post/</loc>
+    <lastmod>2024-01-01T00:00:00+02:00</lastmod>
+  </url><url>
+    <loc>http://lauraonetwo.github.io/categories/</loc>
+  </url><url>
+    <loc>http://lauraonetwo.github.io/tags/</loc>
+  </url>
+</urlset>
