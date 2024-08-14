@@ -1,6 +1,6 @@
 ---
 title: "WELCOME TO MY PAGE ❤️"
-date: 2023-09-10T11:59:59+02:00
+date: 2024-08-14T02:05:00+02:00
 draft: false
 pin: true
 summary: "Introduction"
@@ -10,6 +10,8 @@ summary: "Introduction"
 
 I'm excited you found your way to this little corner of the internet 😁.
 
-My name is ```Laura Wang Qiu```, and I'm on a mission to open up my world and invite you to join me on some of the incredible journeys I've embarked on in this rollercoaster called _life_.
+My name is ```Laura Wang Qiu```, and I'm currently a student at the Complutense University of Madrid, studying a Videogame Development degree. I'm passionate about technology, design, and programming, and I'm always looking for new ways to learn and grow.
 
-Stay tuned !
+I created this blog to share my journey, experiences, and knowledge with you. I hope you find something useful here, and if you have any questions or suggestions, feel free to reach out to me.
+
+I'm looking forward to connecting with you! 🚀
