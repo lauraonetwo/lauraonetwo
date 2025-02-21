@@ -591,7 +591,7 @@ width: 95%;
   overflow: hidden;
   transform-origin: 0 100%;
   display: inline-block;
-  /* line-height: 1em; */
+  line-height: 1.1em;
 }
 .txt-fx .letter {
   transform-origin: 0 100%;
