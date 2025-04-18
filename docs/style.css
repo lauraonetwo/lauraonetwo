@@ -414,7 +414,10 @@ header {
 }
 .skill-chart li .chart-percentage.forty-percent {
   width: 40%; 
-  }
+}
+.skill-chart li .chart-percentage.fifty-percent {
+  width: 50%; 
+}
 .skill-chart li .chart-percentage.seventy-percent {
 width: 70%; 
 }
