@@ -2,12 +2,17 @@ import argparse
 import re
 
 def convert_to_embed_link(youtube_link):
-    match = re.match(r".*v=([^&]+)", youtube_link)
-    if match:
-        video_id = match.group(1)
+    match_long = re.match(r".*v=([^&]+)", youtube_link)
+    if match_long:
+        video_id = match_long.group(1)
         return f"https://www.youtube.com/embed/{video_id}"
-    else:
-        raise ValueError("Youtube link is not valid. Please provide a valid link")
+    
+    match_short = re.match(r"https://youtu\.be/([^?]+)", youtube_link)
+    if match_short:
+        video_id = match_short.group(1)
+        return f"https://www.youtube.com/embed/{video_id}"
+    
+    raise ValueError("YouTube link is not valid. Please provide a valid link")
 
 def add_project(categories, video_link, title, more_info_link, image_path):
     portfolio_file = "docs/portfolio.html"
