@@ -1,0 +1,54 @@
+name: Add Project to Portfolio
+
+on:
+  workflow_dispatch:
+    inputs:
+      categories:
+        description: 'Project categories (separated by spaces, e.g.: “all prog gamea ai others”)'
+        required: true
+        default: "all prog gamea ai others"
+      video_link:
+        description: 'YouTube video link'
+        required: true
+      title:
+        description: 'Title of the project'
+        required: true
+      more_info_link:
+        description: 'Link to more information (e.g., GitHub repository)'
+        required: false
+      image_path:
+        description: 'Name of the image file (e.g., "example.png")'
+        required: true
+      drive_link:
+        description: 'Google Drive link to the image file'
+        required: true
+
+jobs:
+  add_project:
+    runs-on: ubuntu-latest
+
+    steps:
+    - name: Checkout repository
+      uses: actions/checkout@v3
+
+    - name: Download image from Google Drive
+      run: |
+        file_id=$(echo "${{ github.event.inputs.drive_link }}" | sed -n 's#.*d/\(.*\)/.*#\1#p')
+        wget --no-check-certificate "https://drive.google.com/uc?export=download&id=$file_id" -O docs/images/${{ github.event.inputs.image_path }}
+
+    - name: Add project to portfolio
+      run: |
+        python3 add_project.py \
+          --categories "${{ github.event.inputs.categories }}" \
+          --video_link "${{ github.event.inputs.video_link }}" \
+          --title "${{ github.event.inputs.title }}" \
+          $(if [ -n "${{ github.event.inputs.more_info_link }}" ]; then echo "--more_info_link '${{ github.event.inputs.more_info_link }}'"; fi) \
+          --image_path "images/${{ github.event.inputs.image_path }}"
+
+    - name: Commit and push changes
+      run: |
+        git config --global user.name "GitHub Actions"
+        git config --global user.email "actions@github.com"
+        git add docs/portfolio.html docs/images/${{ github.event.inputs.image_path }}
+        git commit -m "Add new project: ${{ github.event.inputs.title }}"
+        git push

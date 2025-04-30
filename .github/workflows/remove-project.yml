@@ -1,0 +1,43 @@
+name: Remove Project from Portfolio
+
+on:
+  workflow_dispatch:
+    inputs:
+      image_path:
+        description: 'Path to the image file of the project to remove (e.g., "example.png")'
+        required: true
+
+jobs:
+  remove_project:
+    runs-on: ubuntu-latest
+
+    steps:
+    - name: Checkout repository
+      uses: actions/checkout@v3
+
+    - name: Set up Python
+      uses: actions/setup-python@v4
+      with:
+        python-version: '3.x'
+
+    - name: Install dependencies
+      run: |
+        python3 -m pip install --upgrade pip
+        python3 -m pip install beautifulsoup4
+
+    - name: Remove project from portfolio
+      run: |
+        python3 remove_project.py --image "${{ github.event.inputs.image_path }}"
+
+    - name: Remove image file
+      run: |
+        rm docs/images/${{ github.event.inputs.image_path }}
+
+    - name: Commit and push changes
+      run: |
+        git config --global user.name "GitHub Actions"
+        git config --global user.email "actions@github.com"
+        git add docs/portfolio.html
+        git rm docs/images/${{ github.event.inputs.image_path }}
+        git commit -m "Remove project and image: ${{ github.event.inputs.image_path }}"
+        git push
