@@ -42,7 +42,7 @@ jobs:
           --categories "${{ github.event.inputs.categories }}" \
           --video_link "${{ github.event.inputs.video_link }}" \
           --title "${{ github.event.inputs.title }}" \
-          $(if [ -n "${{ github.event.inputs.more_info_link }}" ]; then echo "--more_info_link '${{ github.event.inputs.more_info_link }}'"; fi) \
+          $(if [ -n "${{ github.event.inputs.more_info_link }}" ]; then echo "--more_info_link ${{ github.event.inputs.more_info_link }}"; fi) \
           --image_path "images/${{ github.event.inputs.image_path }}"
 
     - name: Commit and push changes
