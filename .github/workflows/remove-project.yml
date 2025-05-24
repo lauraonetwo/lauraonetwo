@@ -27,7 +27,7 @@ jobs:
 
     - name: Remove project from portfolio
       run: |
-        python3 remove_project.py --image "${{ github.event.inputs.image_path }}"
+        python3 scripts/remove_project.py --image "${{ github.event.inputs.image_path }}"
 
     - name: Remove image file
       run: |

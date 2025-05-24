@@ -38,7 +38,7 @@ jobs:
 
     - name: Add project to portfolio
       run: |
-        python3 add_project.py \
+        python3 scripts/add_project.py \
           --categories "${{ github.event.inputs.categories }}" \
           --video_link "${{ github.event.inputs.video_link }}" \
           --title "${{ github.event.inputs.title }}" \
