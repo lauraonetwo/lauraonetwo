@@ -1,0 +1,39 @@
+name: Add or Remove Portfolio Filter
+
+on:
+  workflow_dispatch:
+    inputs:
+      action:
+        description: 'Action to perform (add or remove)'
+        required: true
+        default: 'add'
+        type: choice
+        options:
+          - add
+          - remove
+      class:
+        description: 'Filter class (e.g. test)'
+        required: true
+      name:
+        description: 'Filter name (required for add)'
+        required: false
+
+jobs:
+  update_filter:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v3
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.x'
+
+      - name: Run add_remove_filter.py
+        run: |
+          if [ "${{ github.event.inputs.action }}" = "add" ]; then
+            python scripts/add_remove_filter.py "${{ github.event.inputs.class }}" "${{ github.event.inputs.name }}" add
+          else
+            python scripts/add_remove_filter.py "${{ github.event.inputs.class }}" remove
+          fi
