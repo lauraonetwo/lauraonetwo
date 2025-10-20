@@ -701,6 +701,11 @@ width: 95%;
   backdrop-filter: blur(6px);
 }
 
+.audio-visualizer-instructions .btn {
+  font-weight: 600;
+  text-transform: uppercase;
+}
+
 @media only screen and (max-width: 576px) {
   .audio-visualizer-instructions {
     position: static;
