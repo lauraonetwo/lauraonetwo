@@ -675,3 +675,36 @@ width: 95%;
     right: 0;
   }
 }
+
+#audio-visualizer-canvas {
+  background-color: #000;
+  min-height: 420px;
+  position: relative;
+}
+
+#audio-visualizer-canvas canvas {
+  display: block;
+  width: 100% !important;
+  height: 100% !important;
+}
+
+.audio-visualizer-instructions {
+  position: absolute;
+  top: 1.5rem;
+  left: 1.5rem;
+  max-width: 320px;
+  padding: 1rem 1.25rem;
+  border-radius: 1rem;
+  background: rgba(0, 0, 0, 0.55);
+  color: rgba(255, 255, 255, 0.85);
+  font-size: 0.9rem;
+  backdrop-filter: blur(6px);
+}
+
+@media only screen and (max-width: 576px) {
+  .audio-visualizer-instructions {
+    position: static;
+    margin: 1rem;
+    max-width: none;
+  }
+}
