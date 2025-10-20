@@ -2,9 +2,6 @@ const audioVisualizerSketch = (p) => {
   let mic;
   let fft;
   let canvasParent;
-  let startButton;
-  let statusMessage;
-  let audioActive = false;
 
   const getParentSize = () => {
     if (!canvasParent) {
@@ -18,70 +15,19 @@ const audioVisualizerSketch = (p) => {
     };
   };
 
-  const setStatus = (message, isError = false) => {
-    if (!statusMessage) {
-      return;
-    }
-
-    statusMessage.textContent = message;
-    statusMessage.classList.toggle("visually-hidden", !message);
-    statusMessage.classList.toggle("text-danger", isError);
-    statusMessage.classList.toggle("text-success", !isError && Boolean(message));
-  };
-
-  const handleStartClick = async () => {
-    if (audioActive) {
-      return;
-    }
-
-    try {
-      await p.userStartAudio();
-      await mic.start();
-      audioActive = true;
-
-      if (startButton) {
-        startButton.disabled = true;
-        startButton.textContent = "Micrófono activado";
-      }
-
-      setStatus("Micrófono en uso. ¡Haz sonidos y observa la animación!");
-    } catch (error) {
-      console.error("No se pudo iniciar el micrófono", error);
-      setStatus("No se pudo acceder al micrófono. Revisa los permisos del navegador.", true);
-    }
-  };
-
-  const wireControls = () => {
-    if (!startButton) {
-      startButton = document.getElementById("audio-visualizer-start");
-    }
-
-    if (!statusMessage) {
-      statusMessage = document.getElementById("audio-visualizer-status");
-    }
-
-    if (startButton && !startButton.dataset.bound) {
-      startButton.dataset.bound = "true";
-      startButton.addEventListener("click", handleStartClick);
-    }
-
-    setStatus("Haz clic en \"Activar visualizador\" para conceder permiso al micrófono.");
-  };
-
   p.setup = () => {
     canvasParent = document.getElementById("audio-visualizer-canvas");
     const { width, height } = getParentSize();
     p.createCanvas(width, height).parent(canvasParent || document.body);
 
     mic = new p5.AudioIn();
+    mic.start();
 
     fft = new p5.FFT();
     fft.setInput(mic);
 
     p.noStroke();
     p.colorMode(p.HSB, 360, 100, 100, 100);
-
-    wireControls();
   };
 
   p.windowResized = () => {
@@ -91,10 +37,6 @@ const audioVisualizerSketch = (p) => {
 
   p.draw = () => {
     p.background(0, 10);
-
-    if (!audioActive) {
-      return;
-    }
 
     const spectrum = fft.analyze();
     const maxSize = Math.min(p.width, p.height) / 5;
