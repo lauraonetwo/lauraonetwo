@@ -15,6 +15,6 @@
 ---
 <p align="center" style="font-family: Arial;"><b>🙋‍♀️ ABOUT ME 🙋‍♀️</b></p>
 
-- 🌱 I’m currently working at Fever after finishing my Bachelor's Degree in Videogames Development and studying a Master's Degree in Cybersecurity both in <b>Complutense University of Madrid</b>
+- 🌱 I’m currently working at Fever after finishing my Bachelor's Degree in Videogames Development and my Master's Degree in Cybersecurity both in <b>Complutense University of Madrid</b>
 - 📫 How to reach me: **lauraonetwo443 at Gmail**
 - 🗂️ Visit my portfolio: https://lauraonetwo.com/
